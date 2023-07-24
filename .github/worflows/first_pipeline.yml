@@ -1,0 +1,12 @@
+name: test-pipeline
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run tests
+        run : go test ./...
