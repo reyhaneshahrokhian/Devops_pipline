@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: test
-        run: echo "test $(date)"
+        run: make test
 
   compile:
     needs: [test, lint]
