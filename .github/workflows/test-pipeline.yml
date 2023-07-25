@@ -10,7 +10,8 @@ on:
 
 jobs:
   test:
-    - runs-on: ubuntu-latest
-    - uses: action/checkout@v2
-    - name: test
-    - run: go test ./...
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: test
+        run: go test ./...
