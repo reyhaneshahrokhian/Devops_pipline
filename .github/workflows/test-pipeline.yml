@@ -24,6 +24,7 @@ jobs:
         run: echo "test $(date)"
 
   compile:
+    needs: test, lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,6 +32,7 @@ jobs:
         run: echo "compile $(date)"
 
   release:
+    needs: compile
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
